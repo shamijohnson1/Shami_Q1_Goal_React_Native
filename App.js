@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View } from 'react-native';
+import FlatButton from './components/button';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello World!</Text>
       <StatusBar style="auto" />
+      <FlatButton onPress={ ()=> {
+        Alert.alert("I am pressed!")
+      }
+      } text='Map' />
     </View>
   );
 }
@@ -13,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
